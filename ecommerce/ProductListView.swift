@@ -15,7 +15,7 @@ struct ProductListView: View {
     
     
     var body: some View {
-        List{
+        NavigationView{        List{
             ForEach(products){
                 currentProduct in
                 NavigationLink(destination: ProductView(product: currentProduct))
@@ -31,9 +31,11 @@ struct ProductListView: View {
                                 
                             }
                     }
-                }                .navigationBarTitle("Products:")
-
+                }
+                
             }
+        }.navigationBarTitle("Products:")
+            
         }
     }
 }

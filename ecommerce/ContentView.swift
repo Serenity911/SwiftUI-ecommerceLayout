@@ -39,7 +39,6 @@ struct ContentView: View {
                             ForEach(categories){
                                 currentCategory in
                                 
-                                
                                 NavigationLink(destination: ProductListView(products: currentCategory.products)){
                                     HStack(alignment: .center){
                                         Spacer()
@@ -60,11 +59,14 @@ struct ContentView: View {
                         }
                         .navigationBarTitle("Categories:")
                         .listStyle(GroupedListStyle()).layoutPriority(/*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                        
                     }
                     .tabItem {
-//                                Image("products")
-                                Text("Products")
+                             VStack{   Image("products")
+                                    .resizable()
+                                    .frame(width: 24.0, height: 24.0)
+
+                                   
+                                Text("Products")}
                     }
                     CartView(cart: cart)
                         .tabItem{
